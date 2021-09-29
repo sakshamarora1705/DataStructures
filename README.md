@@ -43,53 +43,54 @@ Postorder: left, right, root
 <h3> Implementing a binary search tree </h3>
 
 <pre><code class="python"> 
-    class Node():
-        Node left, right
-        int data
-  
-        def __init__(self, data):
-            self.data = data
+               
+class Node:
+
+    #Initializing the node class
+    def __init__(self, data = None):
+        self.left = self.right = None
+        self.data = data
 
 
-        #Function to insert a given value to the binary search tree
-        def insert(self, value):
-            if (value <= self.data):
-                if (self.left is None):
-                    self.left = new Node(value)
-                else:
-                    self.left.insert(value)
+    #Function to insert a given value to the binary search tree
+    def insert(self, value):
+        if (value <= self.data):
+            if (self.left is None):
+                self.left = Node(value)
             else:
-                if (self.right is None):
-                    self.right = new Node(value)
-                else:
-                    self.right.insert(value)
+                self.left.insert(value)
+        else:
+            if (self.right is None):
+                self.right = Node(value)
+            else:
+                self.right.insert(value)
 
 
-        #Function to check if the given value is present in the binary search tree or not
-        def contains(self, value):
-            if (value == self.data):
-                return True
-            elif (value < self.data):
-                if (self.left is None):
-                    return False
-                else:
-                    return self.left.contains(value)
-            elif (value > self.data):
-                if (self.right is None):
-                    return False
-                else:
-                    return self.right.contains(value)
+    #Function to check if the given value is present in the binary search tree or not
+    def contains(self, value):
+        if (value == self.data):
+            return True
+        elif (value < self.data):
+            if (self.left is None):
+                return False
+            else:
+                return self.left.contains(value)
+        elif (value > self.data):
+            if (self.right is None):
+                return False
+            else:
+                return self.right.contains(value)
 
 
-        #Function to print the inorder traversal of the given binary search tree 
-        def printInOrderTraversal():
-            if (self.left is not None):
-                self.left.printInOrderTraversal()
+    #Function to print the inorder traversal of the given binary search tree 
+    def printInOrderTraversal(self):
+        if (self.left is not None):
+            self.left.printInOrderTraversal()
           
-            print(self.data)
+        print(self.data)
   
-            if (self.right is not None):
-                self.right.printInOrderTraversal()
-          
+        if (self.right is not None):
+            self.right.printInOrderTraversal()
+
 
 </code></pre>
