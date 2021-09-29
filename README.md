@@ -40,15 +40,16 @@ Inorder: left, root, right (typical)
 Preorder: root, left, right
 Postorder: left, right, root
 
-<h4> Implementing a binary search tree </h4>
-<pre><code class="python"> 
+<h3> Implementing a binary search tree </h3>
 
+<pre><code class="python"> 
     class Node():
         Node left, right
         int data
   
         def __init__(self, data):
             self.data = data
+
 
         #Function to insert a given value to the binary search tree
         def insert(self, value):
@@ -62,7 +63,8 @@ Postorder: left, right, root
                     self.right = new Node(value)
                 else:
                     self.right.insert(value)
-      
+
+
         #Function to check if the given value is present in the binary search tree or not
         def contains(self, value):
             if (value == self.data):
@@ -77,7 +79,8 @@ Postorder: left, right, root
                     return False
                 else:
                     return self.right.contains(value)
-    
+
+
         #Function to print the inorder traversal of the given binary search tree 
         def printInOrderTraversal():
             if (self.left is not None):
