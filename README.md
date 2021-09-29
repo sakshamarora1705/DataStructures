@@ -49,6 +49,7 @@ Postorder: left, right, root
       def __init__(self, data):
           self.data = data
 
+      #Function to insert a given value to the binary search tree
       def insert(self, value):
           if (value <= self.data):
               if (self.left is None):
@@ -60,11 +61,33 @@ Postorder: left, right, root
                   self.right = new Node(value)
               else:
                   self.right.insert(value)
-                                 
+      
+      #Function to check if the given value is present in the binary search tree or not
       def contains(self, value):
           if (value == self.data):
               return True
           elif (value < self.data):
+              if (self.left is None):
+                  return False
+              else:
+                  return self.left.contains(value)
+          elif (value > self.data):
+              if (self.right is None):
+                  return False
+              else:
+                  return self.right.contains(value)
+    
+      #Function to print the inorder traversal of the given binary search tree 
+      def printInOrderTraversal():
+          if (self.left is not None):
+              self.left.printInOrderTraversal()
+          
+          print(self.data)
+  
+          if (self.right is not None):
+              self.right.printInOrderTraversal()
+          
+  
               
 
 </code>
