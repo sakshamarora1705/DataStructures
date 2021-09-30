@@ -211,6 +211,35 @@ def existsInBinaryTree(root, value):
         return root.data == value or inLeftBinaryTree or inRightBinaryTree
 </code></pre>
 
+Reverse a binary tree
+<pre><code class="python">
+def reverseBinaryTree(root):
+    if root is None:
+        return
+    else:
+        reverseBinaryTree(root.left)
+        reverseBinaryTree(root.right)
+        root.left, root.right = root.right, root.left
+</code></pre>
+
 
 <pre><code class="python">
+>>> root = Node(15)
+>>> root.insert(8)
+>>> root.insert(9)
+>>> root.insert(11)
+>>> root.insert(14)
+>>> root.insert(7)
+>>> root.insert(17)
+>>> root.insert(19)
+>>> reverseBinaryTree(root)
+>>> root.printInOrderTraversal()
+19
+17
+15
+14
+11
+9
+8
+7
 </code></pre>
