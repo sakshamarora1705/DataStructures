@@ -43,8 +43,7 @@ Postorder: left, right, root
 <br>
 <h3> Implementing a binary search tree </h3>
 
-<pre><code class="python"> 
-               
+<pre><code class="python">              
 class Node:
 
     #Initializing the node class
@@ -92,8 +91,6 @@ class Node:
   
         if (self.right is not None):
             self.right.printInOrderTraversal()
-
-
 </code></pre>
 
 <br>
@@ -123,5 +120,47 @@ class Node:
 True
 >>> root.contains(1)
 False
-
 </code></pre>
+
+
+<br>
+
+<h2> Interview Questions associated with binary trees </h2>
+<p> Subtrees of subtrees are also considered as trees, which is why our functions would be recursive. </p>
+
+
+<pre><code class="python">
+def binaryTreeSum(root):
+    if root is None:
+        return 0
+    else:
+        leftTreeSum = binaryTreeSum(root.left)
+        rightTreeSum = binaryTreeSum(root.right)
+        return root.data + leftTreeSum + rightTreeSum
+</code></pre>
+
+
+<pre><code class="python">
+>>> root = Node(5)
+>>> root.insert(4)
+>>> root.insert(9)
+>>> root.insert(6)
+>>> root.insert(1)
+>>> root.insert(8)
+>>> root.insert(3)
+>>> root.insert(7)
+>>> root.insert(2)
+>>> root.printInOrderTraversal()
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> binaryTreeSum(root)
+45
+</code></pre>
+
