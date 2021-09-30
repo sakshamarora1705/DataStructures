@@ -248,9 +248,12 @@ def reverseBinaryTree(root):
 <h5> Binary Tree Longest Consecutive Sequence </h5>
 Given a binary tree, find the length of the longest consecutive sequence path.
 Hints:
-Use recursion to traverse the entire tree.
-Check the parent node for each node and make sure that current node's value is one more than its parent node.
-Update the longest consecutive path at each step.
+<ul>
+  <li> Use recursion to traverse the entire tree. </li>
+  <li> Check the parent node for each node and make sure that current node's value is one more than its parent node. </li>
+  <li> Update the longest consecutive path at each step. </li>
+</ul>
+ 
 
 
 
