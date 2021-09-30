@@ -96,8 +96,9 @@ class Node:
 
 </code></pre>
 
-
 <br>
+
+<h4> Testing binary search tree implementation </h4>
 <pre><code class="python">
 >>> root = Node(5)
 >>> root.left
