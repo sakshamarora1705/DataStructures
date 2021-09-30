@@ -178,5 +178,39 @@ A. Taking a recursive approach:
 </ol>
 </p>
 
+Get the max value from the binary tree
+<pre><code class="python">
+def binaryTreeMax(root):
+    if root is None:
+        return float("-inf")
+    else:
+        leftTreeMax = binaryTreeMax(root.left)
+        rightTreeMax = binaryTreeMax(root.right)
+        return max(root.data, leftTreeMax, rightTreeMax)
+</code></pre>
+
+Get the height of the binary tree
+<pre><code class="python">
+def binaryTreeHeight(root):
+    if root is None:
+        return 0
+    else:
+        leftTreeHeight = binaryTreeHeight(root.left)
+        rightTreeHeight = binaryTreeHeight(root.right)
+        return 1 + max(leftTreeHeight, rightTreeHeight)
+</code></pre>
+
+Check if a specific value exists in the tree
+<pre><code class="python">
+def existsInBinaryTree(root, value):
+    if root is None:
+        return False
+    else:
+        inLeftBinaryTree = existsInBinaryTree(root.left, value)
+        inRightBinaryTree = existsInBinaryTree(root.right, value)
+        return root.data == value or inLeftBinaryTree or inRightBinaryTree
+</code></pre>
 
 
+<pre><code class="python">
+</code></pre>
