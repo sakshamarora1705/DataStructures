@@ -164,13 +164,19 @@ def binaryTreeSum(root):
 45
 </code></pre>
 
+<br>
 
+<p> 
 Q. How to solve (almost) any binary tree coding problem?
+<br>
 A. Taking a recursive approach:
-
 <ol>
   <li> Finding one or more base cases </li>
   <li> Calling the same function on the left subtree </li>
   <li> Calling the same function on the right subtree </li>
   <li> Combining the two results </li>
 </ol>
+</p>
+
+
+
