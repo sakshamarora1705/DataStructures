@@ -40,6 +40,7 @@ Inorder: left, root, right (typical)
 Preorder: root, left, right
 Postorder: left, right, root
 
+<br>
 <h3> Implementing a binary search tree </h3>
 
 <pre><code class="python"> 
@@ -92,5 +93,34 @@ class Node:
         if (self.right is not None):
             self.right.printInOrderTraversal()
 
+
+</code></pre>
+
+
+<br>
+<pre><code class="python">
+>>> root = Node(5)
+>>> root.left
+>>> root.right
+>>> root.insert(9)
+>>> root.right.data
+9
+>>> root.insert(4)
+>>> root.left.data
+4
+>>> root.printInOrderTraversal()
+4
+5
+9
+>>> root.insert(10)
+>>> root.printInOrderTraversal()
+4
+5
+9
+10
+>>> root.contains(10)
+True
+>>> root.contains(1)
+False
 
 </code></pre>
