@@ -247,6 +247,7 @@ def reverseBinaryTree(root):
 
 <h5> Binary Tree Longest Consecutive Sequence </h5>
 Given a binary tree, find the length of the longest consecutive sequence path.
+<br>
 Hints:
 <ul>
   <li> Use recursion to traverse the entire tree. </li>
@@ -255,3 +256,18 @@ Hints:
 </ul>
 
 
+<br>
+Check if a binary tree is symmetric or not
+<pre><code class="python">
+def isSymmetric(self, root):
+    
+    def isSymmetricHelper(BSTNode1, BSTNode2):
+        if BSTNode1 is None and BSTNode2 is None:
+            return True
+        elif BSTNode1 is None or BSTNode2 is None:
+            return False
+        else:
+            return (BSTNode1.val == BSTNode2.val) and isSymmetricHelper(BSTNode1.left, BSTNode2.right) and isSymmetricHelper(BSTNode1.right, BSTNode2.left)
+            
+    return isSymmetricHelper(root.left, root.right)
+</code></pre>
